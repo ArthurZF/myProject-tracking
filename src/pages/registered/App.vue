@@ -76,7 +76,7 @@
   </div>
 </template>
 <script>
-import { post } from "@/components/post.js";
+import post from "@/components/post.js";
 export default {
   name: "App",
   data() {

@@ -9,11 +9,11 @@ const computeData = function(data, url) {
   return JSON.stringify({
     applicationCode: applicationCode,
     sendData: data,
-    sendFrom: "planningProject",
+    sendFrom: "tracking",
     sendCode: url
   });
 };
-export const post = function(url, data) {
+export default function(url, data) {
   let postConfig = {
     method: "POST",
     headers: headers,
@@ -23,7 +23,11 @@ export const post = function(url, data) {
   return new Promise(resolve => {
     fetch(postUrl, postConfig)
       .then(response => {
-        return response;
+        if (response.ok) {
+          return response;
+        } else {
+          return Promise.reject(`${response.status}-${response.statusText}`);
+        }
       })
       .then(response => {
         return response.json();
@@ -38,4 +42,4 @@ export const post = function(url, data) {
         });
       });
   });
-};
+}

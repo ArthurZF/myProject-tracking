@@ -1,6 +1,6 @@
 import { Notification } from "element-ui";
-const postUrl = "http://localhost:3000/entrance.js";
-// const postUrl = "http://10.60.13.30:3000/entrance.js"
+// const postUrl = "http://localhost:3000/entrance.js";
+const postUrl = "http://10.60.13.30:3000/entrance.js"
 const headers = {
   "Content-Type": "application/x-www-form-urlencoded"
 };
